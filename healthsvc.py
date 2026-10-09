@@ -34,4 +34,5 @@ def report():
     return send_file(os.path.join("/var/reports", name))
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", debug=True)
+    # Never serve the Werkzeug debugger; for local debugging use `flask run --debug` (binds 127.0.0.1).
+    app.run(host="0.0.0.0", debug=False)
